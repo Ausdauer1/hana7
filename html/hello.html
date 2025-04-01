@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- utf-8 nb4 이모티콘까지 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- initial-scale 나이드신 분들을 위해 1.5 등 높은 크기로 사용가능-->
+    <title>Hello</title>
+    <style>
+      .red {
+        color: red;
+      }
+    </style>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+  </head>
+  <body class="ml-5 mt-2">
+    <h1 class="text-3xl font-bold underline text-main bg-clifford w-1/5 text-center p-2
+    rounded-md" >Hello</h1>
+    <header class="red">Header</header>
+    <nav data-id="nav">Nav</nav>
+    <section class="bg-black text-white p-3">Section</section>
+    <aside>Aside</aside>
+
+    <form id="frm" name="frm" method="POST"
+    class="border-2 border-green-500 p-3">
+      <div class="md:flex lg:gap-2">
+        <input type="email" id="email"
+        placeholder="Email..."
+        class="border-cyan-800 rounded-md px-1 focus:outline-none w-1/2 sm:mb-3 sm:w-full">
+        <input type="password" id="pw"
+        placeholder="Password..."
+        class="w-1/2 sm:w-full">
+      </div>
+      <div class="flex justify-around">
+        <button class="bg-gray-500 text-white px-2 hover:bg-gray-700" type="reset">Reset</button>
+        <button class="bg-sky-500 rounded-md shadow-md text-white px-2 hover:bg-sky-700" type="submit">Submit</button>
+        <button class="bg-clifford px-3 rounded-md font-extrabold text-white hover:bg-red-800" type="button">Delete</button>
+      </div>
+    </form>
+
+    <div>Yesterday is history.</div>
+    <div>
+      tommorrow is a mystery.
+      <span id="upper">
+        But today is a gift.
+        <span class="inner">Inner span</span>
+      </span>
+    </div>
+    
+    <div>That is why it is called the present.</div>
+    <ul class="list-decimal list-inside">
+      
+      <li class="first:pt-5 mr-24 flex justify-between h-24">
+        <img src="./images/blog-author-02.jpg" alt="blog-author-2">
+        <small class="bg-red-500 align-middle">remark...
+          <small class="bg-red-500 align-bottom">remark..</small>
+        </small>
+      </li>
+      <li>222</li>
+      <li>333</li>
+    </ul>
+    <footer>Footer</footer>
+</html>
+<!-- 한줄에 하나 block 태크 -->
+<!-- 한줄에 여러개 inline tag -->
