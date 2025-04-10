@@ -91,6 +91,14 @@ const memoFibonacciA = memoizedA((n) => {
   return memoFibonacciA(n - 2) + memoFibonacciA(n - 1);
 });
 
+function memoizedB(fn) {
+  const cache = {};
+  return (k) => cache[k] || (cache[k] = fn(k));
+}
+const memoFibonacciB = memoizedB((n) => {
+  if (n <= 1) return n;
+});
+
 // console.log(memoFibonacci(0));
 // console.log(memoFibonacci(1));
 // console.log(memoFibonacci(5));
