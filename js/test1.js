@@ -30,6 +30,7 @@ let obj = {
 };
 
 console.log(obj.key());
+console.log(obj.key());
 console.log(obj.aa());
 console.log(obj.bb);
 console.log(obj.cc());
