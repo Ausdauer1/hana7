@@ -35,7 +35,8 @@ const low = upperToLower("Senior Coding Learning JS");
 console.log("🚀 low:", low);
 
 const swapCase = (str) =>
-  str.replace(/[A-z]/g, (foundStr) => {
+  str.replace(/[A-z]/g, (foundStr, position) => {
+    // console.log(foundStr, position)
     if (foundStr.match(/[A-Z]/)) return foundStr.toLowerCase();
     else return foundStr.toUpperCase();
   });
@@ -51,14 +52,22 @@ assert.equal(swapCase("Hanaro 7 Class"), "hANARO 7 cLASS");
 const telfmt = (str) => {
   if (str.length === 12) return str.replace(/(\d{4})(\d{4})/, "$1-$2-");
   if (str.length === 11) return str.replace(/(\d{3})(\d{4})/, "$1-$2-");
-  if (str.length === 10) return str.replace(/(0\d0 | 0\d)(\d{3,4})/, "$1-$2-");
+  if (str.length === 10) return str.replace(/(02)(\d{4})(\d{4})|(0\d{2})(\d{3})(\d{4})/, (a,b,c,d,e,f,g) => {
+    if (b) return `${b}-${c}-${d}`
+    else return `${e}-${f}-${g}`
+  });
+  if (str.length === 9) return str.replace(/(0\d)(\d{3})/, "$1-$2-");
+  if (str.length === 8) return str.replace(/(\d{4})/, "$1-");
 };
-console.log(telfmt("050712345678"));
-console.log(telfmt("01012345678"));
-console.log(telfmt("07012341234"));
-console.log(telfmt("0212345678"));
-console.log(telfmt("0101234567"));
-return;
+console.log(telfmt("0101234567"))
+console.log(telfmt("01012345678"))
+console.log(telfmt("0212345678"))
+console.log(telfmt("021234567"))
+console.log(telfmt("0331234567"))
+console.log(telfmt("15771577"))
+console.log(telfmt("07012341234"))
+console.log(telfmt("050712345678"))
+
 // 12개 11개, 10개, 10개,
 assert.deepStrictEqual(telfmt("0101234567"), "010-123-4567");
 assert.deepStrictEqual(telfmt("01012345678"), "010-1234-5678");
@@ -68,3 +77,4 @@ assert.deepStrictEqual(telfmt("0331234567"), "033-123-4567");
 assert.deepStrictEqual(telfmt("15771577"), "1577-1577");
 assert.deepStrictEqual(telfmt("07012341234"), "070-1234-1234");
 assert.deepStrictEqual(telfmt("050712345678"), "0507-1234-5678");
+return;
